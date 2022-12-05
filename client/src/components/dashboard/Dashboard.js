@@ -21,18 +21,18 @@ const Dashboard = ({
 
   return (
     <section className="container">
-      <Grid container style={{ justifyContent: "space-between" }}>
-        <p className="lead">
-          <i className="fas fa-user" /> {user && user.name}
-        </p>
-        <Link to="/edit-profile">
-          <Button variant="outlined" startIcon={<EditIcon />}>
-            Edit Profile
-          </Button>
-        </Link>
-      </Grid>
       {profile !== null ? (
         <>
+          <Grid container style={{ justifyContent: "space-between" }}>
+            <p className="lead">
+              <i className="fas fa-user" /> {user && user.name}
+            </p>
+            <Link to="/edit-profile">
+              <Button variant="outlined" startIcon={<EditIcon />}>
+                Edit Profile
+              </Button>
+            </Link>
+          </Grid>
           <div className="my-2">
             <Experience experience={profile.experience} />
           </div>
@@ -46,6 +46,11 @@ const Dashboard = ({
         </>
       ) : (
         <>
+          <Grid container style={{ justifyContent: "space-between" }}>
+            <p className="lead">
+              <i className="fas fa-user" /> {user && user.name}
+            </p>
+          </Grid>
           <p>You have not yet setup a profile, please add some info</p>
           <Link to="/create-profile" className="btn btn-primary my-1">
             Create Profile
